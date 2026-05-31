@@ -6,9 +6,9 @@ import Header from './components/layout/Header'
 
 function App() {
   return (
-    <div className="min-h-screen bg-dark-900">
+    <div className="min-h-screen bg-dark-950">
       <Header />
-      <main className="container mx-auto px-4 py-6">
+      <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/area/:areaId" element={<LifeAreaPage />} />
