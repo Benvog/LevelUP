@@ -11,9 +11,9 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     const baseStyles = 'rounded-xl border transition-all duration-200'
     
     const variants = {
-      default: 'bg-dark-850/90 border-dark-700',
+      default: 'bg-dark-800 border-dark-700',
       glass: 'glass-card',
-      solid: 'bg-dark-800 border-dark-700',
+      solid: 'bg-dark-850 border-dark-700',
     }
     
     const paddings = {

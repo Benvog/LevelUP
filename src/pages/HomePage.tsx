@@ -17,7 +17,7 @@ function HomePage() {
         
         {/* Hero Section */}
         <div className="text-center max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark-800/60 border border-accent-cyan/30 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark-800 border border-accent-cyan/30 mb-6">
             <Zap className="w-4 h-4 text-accent-cyan" />
             <span className="text-sm text-gray-300">Make locking in feel like leveling up</span>
           </div>
