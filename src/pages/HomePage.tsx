@@ -6,18 +6,19 @@ import ProgressBar from '../components/ui/ProgressBar'
 
 function HomePage() {
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* Ambient Background Orbs */}
-      <div className="ambient-orb ambient-orb-cyan w-96 h-96 -top-48 -left-48 animate-float" />
-      <div className="ambient-orb ambient-orb-blue w-80 h-80 top-1/3 -right-40 animate-float-delayed" />
-      <div className="ambient-orb ambient-orb-teal w-64 h-64 bottom-20 left-1/4 animate-float" />
+    <div className="relative min-h-screen overflow-hidden bg-dark-950">
+      {/* Large Visible Ambient Orbs */}
+      <div className="ambient-orb ambient-orb-cyan w-[600px] h-[600px] -top-40 -left-40 animate-float" />
+      <div className="ambient-orb ambient-orb-blue w-[500px] h-[500px] top-1/4 -right-60 animate-float-delayed" />
+      <div className="ambient-orb ambient-orb-teal w-[400px] h-[400px] bottom-0 left-1/3 animate-float-slow" />
+      <div className="ambient-orb ambient-orb-purple w-[350px] h-[350px] top-1/2 left-1/4 animate-float" style={{ animationDelay: '2s' }} />
       
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center py-12 px-4 gap-12">
         
         {/* Hero Section */}
         <div className="text-center max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark-800 border border-accent-cyan/30 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-accent-cyan/30 mb-6">
             <Zap className="w-4 h-4 text-accent-cyan" />
             <span className="text-sm text-gray-300">Make locking in feel like leveling up</span>
           </div>
@@ -50,7 +51,7 @@ function HomePage() {
             { icon: TrendingUp, label: 'Habit Streak', value: '0', color: 'text-accent-blue' },
             { icon: Award, label: 'Completed', value: '0', color: 'text-accent-amber' },
           ].map((stat, i) => (
-            <Card key={i} className="text-center group hover:scale-105 transition-transform" padding="md">
+            <Card key={i} variant="glass" className="text-center group hover:scale-105 transition-transform" padding="md">
               <stat.icon className={`w-6 h-6 ${stat.color} mx-auto mb-2`} />
               <p className="text-3xl font-bold text-white mb-1">{stat.value}</p>
               <p className="text-sm text-gray-500">{stat.label}</p>
