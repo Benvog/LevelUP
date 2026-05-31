@@ -43,7 +43,7 @@ function HomePage() {
         {/* Progress */}
         <div className="space-y-4">
           <p className="text-sm text-gray-500 font-medium">Progress</p>
-          <ProgressBar current={3} total={8} color="purple" />
+          <ProgressBar current={3} total={8} color="cyan" />
           <ProgressBar current={5} total={10} color="teal" />
         </div>
       </Card>

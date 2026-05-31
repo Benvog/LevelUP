@@ -4,7 +4,7 @@ interface ProgressBarProps {
   current: number
   total: number
   size?: 'sm' | 'md' | 'lg'
-  color?: 'purple' | 'teal' | 'blue' | 'green'
+  color?: 'cyan' | 'teal' | 'blue' | 'green' | 'amber'
   showLabel?: boolean
   className?: string
 }
@@ -13,7 +13,7 @@ function ProgressBar({
   current,
   total,
   size = 'md',
-  color = 'purple',
+  color = 'cyan',
   showLabel = true,
   className,
 }: ProgressBarProps) {
@@ -26,10 +26,11 @@ function ProgressBar({
   }
   
   const colors = {
-    purple: 'bg-accent-purple',
+    cyan: 'bg-accent-cyan',
     teal: 'bg-accent-teal',
     blue: 'bg-accent-blue',
     green: 'bg-green-500',
+    amber: 'bg-accent-amber',
   }
 
   return (
