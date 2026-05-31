@@ -1,7 +1,12 @@
 import { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useLifeAreaStore, useMilestoneStore } from '../../stores'
-import { Zap, Target, TrendingUp, Award, Plus } from 'lucide-react'
+import { 
+  Zap, Target, TrendingUp, Award, Plus,
+  Dumbbell, BookOpen, Briefcase, Heart, Music, Code, Coffee, Moon,
+  Sun, DollarSign, Gamepad2, Plane, ShoppingBag, Camera, PenTool,
+  MessageCircle, Brain, Sparkles, Flame, Anchor
+} from 'lucide-react'
 import Button from '../ui/Button'
 
 const ICONS: Record<string, React.ComponentType<{className?: string; color?: string}>> = {
@@ -9,15 +14,47 @@ const ICONS: Record<string, React.ComponentType<{className?: string; color?: str
   target: Target,
   trending: TrendingUp,
   award: Award,
+  dumbbell: Dumbbell,
+  book: BookOpen,
+  briefcase: Briefcase,
+  heart: Heart,
+  music: Music,
+  code: Code,
+  coffee: Coffee,
+  moon: Moon,
+  sun: Sun,
+  dollar: DollarSign,
+  game: Gamepad2,
+  plane: Plane,
+  shopping: ShoppingBag,
+  camera: Camera,
+  pen: PenTool,
+  message: MessageCircle,
+  brain: Brain,
+  sparkles: Sparkles,
+  flame: Flame,
+  anchor: Anchor,
 }
 
 const COLORS: Record<string, string> = {
   cyan: '#06B6D4',
   teal: '#14B8A6',
+  emerald: '#10B981',
+  green: '#22C55E',
   blue: '#3B82F6',
-  amber: '#F59E0B',
-  purple: '#8B5CF6',
+  indigo: '#6366F1',
+  violet: '#8B5CF6',
+  purple: '#A855F7',
+  fuchsia: '#D946EF',
   pink: '#EC4899',
+  rose: '#F43F5E',
+  red: '#EF4444',
+  orange: '#F97316',
+  amber: '#F59E0B',
+  yellow: '#EAB308',
+  lime: '#84CC16',
+  sky: '#0EA5E9',
+  slate: '#64748B',
 }
 
 interface WorldMapProps {

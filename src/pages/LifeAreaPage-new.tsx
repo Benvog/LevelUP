@@ -1,10 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
-import { 
-  ArrowLeft, Plus, Zap, Target, TrendingUp, Award, Clock, Infinity, Calendar,
-  Dumbbell, BookOpen, Briefcase, Heart, Music, Code, Coffee, Moon,
-  Sun, DollarSign, Gamepad2, Plane, ShoppingBag, Camera, PenTool,
-  MessageCircle, Brain, Sparkles, Flame, Anchor
-} from 'lucide-react'
+import { ArrowLeft, Plus, Zap, Target, TrendingUp, Award, Clock, Infinity, Calendar, TrendingUp as TrendIcon } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { useLifeAreaStore, useTemporalTaskStore, useGeneralTaskStore } from '../stores'
 import BranchMap from '../components/map/BranchMap'
@@ -17,47 +12,15 @@ const ICONS: Record<string, React.ComponentType<{className?: string; color?: str
   target: Target,
   trending: TrendingUp,
   award: Award,
-  dumbbell: Dumbbell,
-  book: BookOpen,
-  briefcase: Briefcase,
-  heart: Heart,
-  music: Music,
-  code: Code,
-  coffee: Coffee,
-  moon: Moon,
-  sun: Sun,
-  dollar: DollarSign,
-  game: Gamepad2,
-  plane: Plane,
-  shopping: ShoppingBag,
-  camera: Camera,
-  pen: PenTool,
-  message: MessageCircle,
-  brain: Brain,
-  sparkles: Sparkles,
-  flame: Flame,
-  anchor: Anchor,
 }
 
 const COLORS: Record<string, string> = {
   cyan: '#06B6D4',
   teal: '#14B8A6',
-  emerald: '#10B981',
-  green: '#22C55E',
   blue: '#3B82F6',
-  indigo: '#6366F1',
-  violet: '#8B5CF6',
-  purple: '#A855F7',
-  fuchsia: '#D946EF',
-  pink: '#EC4899',
-  rose: '#F43F5E',
-  red: '#EF4444',
-  orange: '#F97316',
   amber: '#F59E0B',
-  yellow: '#EAB308',
-  lime: '#84CC16',
-  sky: '#0EA5E9',
-  slate: '#64748B',
+  purple: '#8B5CF6',
+  pink: '#EC4899',
 }
 
 function LifeAreaPage() {
@@ -199,6 +162,7 @@ function LifeAreaPage() {
               lifeAreaId={areaId}
               areaName={area.name}
               areaColor={colorValue}
+              areaIcon={area.icon}
             />
           )}
         </div>

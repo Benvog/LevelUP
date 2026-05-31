@@ -1,0 +1,126 @@
+LEVELUP PROJECT - CORE FILES SUMMARY
+=====================================
+
+## PROJECT STRUCTURE
+src/
+├── App.tsx - Routes & layout
+├── components/map/WorldMap.tsx - SVG branching map
+├── pages/HomePage.tsx - World Map hub
+├── pages/LifeAreaPage.tsx - Milestone management  
+├── stores/useLifeAreaStore.ts - Life area state
+├── stores/useMilestoneStore.ts - Milestone state
+└── index.css - Glassmorphism styles
+
+## KEY CONCEPTS
+- LifeArea = Branch on World Map (Forex, Fitness, Coding)
+- Milestone = Sequential nodes on each branch
+- Tasks = Individual actions within milestones
+- Store keys: levelup-lifeareas, levelup-milestones, levelup-tasks
+
+## FILE 1: src/App.tsx
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import LifeAreaPage from './pages/LifeAreaPage'
+import MilestonePage from './pages/MilestonePage'
+import Header from './components/layout/Header'
+import Breadcrumb from './components/layout/Breadcrumb'
+
+function App() {
+  return (
+    <Router>
+      <div className="min-h-screen bg-dark-950 text-white">
+        <Header />
+        <Breadcrumb />
+        <main className="pt-16">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/area/:areaId" element={<LifeAreaPage />} />
+            <Route path="/milestone/:milestoneId" element={<MilestonePage />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  )
+}
+export default App
+
+## FILE 2: src/components/map/WorldMap.tsx (Key parts)
+- SVG paths connecting center "YOU" to each LifeArea
+- Quadratic bezier curves for smooth branching
+- Progress rings around each area node
+- Click to navigate to LifeAreaPage
+- Responsive positioning based on viewport
+
+## FILE 3: src/stores/useLifeAreaStore.ts (Key interface)
+interface LifeAreaState {
+  lifeAreas: LifeArea[]
+  addLifeArea: (name, icon, color) => void
+  updateLifeArea: (id, updates) => void
+  archiveLifeArea: (id) => void
+  restoreLifeArea: (id) => void
+  deleteLifeArea: (id) => void
+  getActiveLifeAreas: () => LifeArea[]
+  getArchivedLifeAreas: () => LifeArea[]
+}
+
+LifeArea = {
+  id: string,
+  name: string,
+  icon: string,  // 'zap', 'target', 'trending', 'award'
+  color: string, // 'cyan', 'teal', 'blue', 'amber', 'purple', 'pink'
+  isArchived: boolean,
+  createdAt: string
+}
+
+## FILE 4: src/stores/useMilestoneStore.ts (Key interface)
+interface MilestoneState {
+  milestones: Milestone[]
+  addMilestone: (lifeAreaId, name, description?, difficulty?) => void
+  completeMilestone: (id) => void
+  getMilestonesByLifeArea: (lifeAreaId) => Milestone[]
+  unlockNextMilestone: (lifeAreaId, completedMilestoneId) => void
+}
+
+Milestone = {
+  id: string,
+  lifeAreaId: string,
+  name: string,
+  description?: string,
+  status: 'locked' | 'active' | 'completed',
+  order: number,
+  difficulty: 'easy' | 'medium' | 'hard' | 'epic',
+  createdAt: string,
+  completedAt?: string
+}
+
+## FILE 5: src/pages/HomePage.tsx (Key features)
+- World Map visualization (600px height container)
+- "Add New Life Area" button (toggles form)
+- Form: name input, icon selection (4 icons), color selection (6 colors)
+- Archive/restore functionality for deleted areas
+- Empty state when no life areas exist
+
+## FILE 6: src/pages/LifeAreaPage.tsx (Key features)
+- Shows life area header with icon and color
+- Breadcrumb: "World Map > AreaName"
+- "Add Milestone" button + form
+- Milestone list with status (locked/active/completed)
+- Complete button for active milestones
+- Auto-unlock next milestone on completion
+- Progress indicators
+
+## CUSTOM COLORS (tailwind.config.js)
+Dark theme: dark-950 (#020617), dark-900, dark-850, dark-800, etc.
+Accents: cyan (#06B6D4), teal (#14B8A6), blue, amber, purple, pink
+
+## CURRENT STATUS
+✅ World Map with branching paths
+✅ Life area CRUD with icons/colors
+✅ Milestone management with auto-unlock
+✅ Navigation between pages
+✅ Breadcrumb navigation
+✅ Glassmorphism UI with ambient orbs
+✅ localStorage persistence via Zustand
+
+## GITHUB REPO
+https://github.com/Benvog/LevelUP.git

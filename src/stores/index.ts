@@ -1,3 +1,5 @@
 export { useLifeAreaStore } from './useLifeAreaStore'
 export { useMilestoneStore } from './useMilestoneStore'
 export { useTaskStore } from './useTaskStore'
+export { useTemporalTaskStore } from './useTemporalTaskStore'
+export { useGeneralTaskStore } from './useGeneralTaskStore'

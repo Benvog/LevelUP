@@ -1,5 +1,10 @@
 import { useState } from 'react'
-import { Zap, Plus, Archive, RotateCcw, Trash2, TrendingUp, Target, Award } from 'lucide-react'
+import { 
+  Zap, Plus, Archive, RotateCcw, Trash2, TrendingUp, Target, Award,
+  Dumbbell, BookOpen, Briefcase, Heart, Music, Code, Coffee, Moon,
+  Sun, DollarSign, Gamepad2, Plane, ShoppingBag, Camera, PenTool,
+  MessageCircle, Brain, Sparkles, Flame, Anchor, Rocket, Gem, Crown
+} from 'lucide-react'
 import Button from '../components/ui/Button'
 import Card from '../components/ui/Card'
 import Input from '../components/ui/Input'
@@ -11,15 +16,47 @@ const ICONS = [
   { name: 'target', icon: Target },
   { name: 'trending', icon: TrendingUp },
   { name: 'award', icon: Award },
+  { name: 'dumbbell', icon: Dumbbell },
+  { name: 'book', icon: BookOpen },
+  { name: 'briefcase', icon: Briefcase },
+  { name: 'heart', icon: Heart },
+  { name: 'music', icon: Music },
+  { name: 'code', icon: Code },
+  { name: 'coffee', icon: Coffee },
+  { name: 'moon', icon: Moon },
+  { name: 'sun', icon: Sun },
+  { name: 'dollar', icon: DollarSign },
+  { name: 'game', icon: Gamepad2 },
+  { name: 'plane', icon: Plane },
+  { name: 'shopping', icon: ShoppingBag },
+  { name: 'camera', icon: Camera },
+  { name: 'pen', icon: PenTool },
+  { name: 'message', icon: MessageCircle },
+  { name: 'brain', icon: Brain },
+  { name: 'sparkles', icon: Sparkles },
+  { name: 'flame', icon: Flame },
+  { name: 'anchor', icon: Anchor },
 ]
 
 const COLORS = [
   { name: 'cyan', value: '#06B6D4' },
   { name: 'teal', value: '#14B8A6' },
+  { name: 'emerald', value: '#10B981' },
+  { name: 'green', value: '#22C55E' },
   { name: 'blue', value: '#3B82F6' },
-  { name: 'amber', value: '#F59E0B' },
-  { name: 'purple', value: '#8B5CF6' },
+  { name: 'indigo', value: '#6366F1' },
+  { name: 'violet', value: '#8B5CF6' },
+  { name: 'purple', value: '#A855F7' },
+  { name: 'fuchsia', value: '#D946EF' },
   { name: 'pink', value: '#EC4899' },
+  { name: 'rose', value: '#F43F5E' },
+  { name: 'red', value: '#EF4444' },
+  { name: 'orange', value: '#F97316' },
+  { name: 'amber', value: '#F59E0B' },
+  { name: 'yellow', value: '#EAB308' },
+  { name: 'lime', value: '#84CC16' },
+  { name: 'sky', value: '#0EA5E9' },
+  { name: 'slate', value: '#64748B' },
 ]
 
 function HomePage() {
